@@ -11,7 +11,7 @@ kaboom({
 loadSprite("cross", "img/cross.png ");
 const parts = []
 
-for (let i = 0; i < 200; i++) {
+for (let i = 0; i < 125; i++) {
     parts.push(add([
         sprite("cross", {width:50, height:50}),  
         scale(rand(.1, 1.5)), 
@@ -24,7 +24,7 @@ parts.forEach(item => {
     item.onUpdate(() => {
         item.angle += 120 * dt()
         item.move(0, 100)
-        if(item.pos.y > height()) {
+        if(item.pos.y - 50 > height()) {
             item.pos.y = -45
         }
     })
